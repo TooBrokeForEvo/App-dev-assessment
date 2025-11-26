@@ -1,47 +1,45 @@
 package com.example.myapplicationfragments
 
+import PageAdapter
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.myapplicationfragments.ui.theme.MyApplicationfragmentsTheme
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.MenuProvider
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
+
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            MyApplicationfragmentsTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
-    }
-}
+        setContentView(R.layout.activity_layout_linear)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_page1))
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_page2))
+        tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyApplicationfragmentsTheme {
-        Greeting("Android")
+        val viewPager = findViewById<ViewPager2>(R.id.pager)
+        val adapter = PageAdapter(this,2)
+        viewPager.setAdapter(adapter)
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = "Page " + (position + 1)
+        }.attach()
+
     }
+
+    override fun addMenuProvider(
+        provider: MenuProvider,
+        owner: androidx.lifecycle.LifecycleOwner,
+        state: androidx.lifecycle.Lifecycle.State
+    ) {
+        TODO("Not yet implemented")
+    }
+    override fun removeMenuProvider(provider: MenuProvider) {
+        TODO("Not yet implemented")
+    }
+
 }

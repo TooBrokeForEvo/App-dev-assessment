@@ -1,9 +1,8 @@
 package com.example.myapplicationfragments
 
-import PageAdapter
+import com.example.myapplicationfragments.adapter.PageAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuProvider
 import androidx.viewpager2.widget.ViewPager2
@@ -20,26 +19,20 @@ class MainActivity : AppCompatActivity() {
         val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_page1))
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_page2))
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_page3))
         tabLayout.tabGravity = TabLayout.GRAVITY_FILL
 
         val viewPager = findViewById<ViewPager2>(R.id.pager)
-        val adapter = PageAdapter(this,2)
+        val adapter = PageAdapter(this,3)
         viewPager.setAdapter(adapter)
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
-            tab.text = "Page " + (position + 1)
+            when(position){
+                0 -> tab.text = "Select Date"
+                1 -> tab.text = "Diary Entry"
+                2 -> tab.text = "View Entries"
+            }
         }.attach()
 
-    }
-
-    override fun addMenuProvider(
-        provider: MenuProvider,
-        owner: androidx.lifecycle.LifecycleOwner,
-        state: androidx.lifecycle.Lifecycle.State
-    ) {
-        TODO("Not yet implemented")
-    }
-    override fun removeMenuProvider(provider: MenuProvider) {
-        TODO("Not yet implemented")
     }
 
 }

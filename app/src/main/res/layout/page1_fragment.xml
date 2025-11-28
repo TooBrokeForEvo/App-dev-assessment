@@ -4,43 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"><![CDATA[
 
-    <EditText
-        android:id="@+id/editValue"
-        android:layout_width="349dp"
-        android:layout_height="51dp"
-        android:ems="10"
-        android:hint="Enter a message"
-        android:inputType="textPersonName"
-        android:text="Message"
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="189dp"
-
-        app:layout_constraintBottom_toTopOf="@+id/vbutton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
     />
 
+
+
+    ]]>
+
     <Button
-        android:id="@+id/vbutton"
-        android:layout_width="346dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-
-        android:text="Update"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="258dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/pickDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick date"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editValue" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="418dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

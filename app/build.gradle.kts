@@ -87,4 +87,12 @@ dependencies {
         implementation("androidx.room:room-paging:$room_version")
 
 
+        implementation("androidx.recyclerview:recyclerview:1.4.0")
+        // For control over item selection of both touch and mouse driven selection
+        implementation("androidx.recyclerview:recyclerview-selection:1.2.0")
+
+        implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+        implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+
+
 }

@@ -24,11 +24,6 @@ class Page1Fragment : Fragment() {
             ViewModelProvider(this)[MyViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
         val view = inflater.inflate(R.layout.page1_fragment, container, false)
-        //val but = view.findViewById<Button>(R.id.vbutton)
-        //val value = view.findViewById<EditText>(R.id.editValue)
-        //but.setOnClickListener {
-        //    viewModel.value.setValue(value.getText().toString())
-        //}
         val btnPickDate = view.findViewById<Button>(R.id.pickDateButton)
 
         btnPickDate.setOnClickListener {

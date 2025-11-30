@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "My Applicationfragments"
+rootProject.name = "diaryapp"
 include(":app")

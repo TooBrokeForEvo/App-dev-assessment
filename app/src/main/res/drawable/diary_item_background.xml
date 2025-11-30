@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- THIS IS THE FIX: Use state_activated for the SelectionTracker -->
+    <item android:state_activated="true" android:drawable="@color/highlightColor"/>
+
+    <!-- Default state (not activated) -->
+    <item android:drawable="@android:color/transparent"/>
+
+</selector>

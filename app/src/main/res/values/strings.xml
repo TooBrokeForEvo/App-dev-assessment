@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">My Applicationfragments</string>
-    <string name="tab_page1">tab_page1</string>
-    <string name="tab_page2">tab_page2</string>
-    <string name="tab_page3">tab_page3</string>
-
+    <string name="app_name">Diary</string>
+    <string name="tab_page1">Date page</string>
+    <string name="tab_page2">Entry page</string>
+    <string name="tab_page3">Entries list</string>
+    <string name="attached_image" />
 </resources>

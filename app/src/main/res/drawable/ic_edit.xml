@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- State when the item IS selected (e.g., shows a highlight color) -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/highlightColor"/>
+        </shape>
+    </item>
+
+    <!-- Default state (the pencil icon) -->
+    <item android:drawable="@drawable/ic_edit_pencil" />
+
+</selector>
